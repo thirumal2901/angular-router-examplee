@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <nav>
+    <a routerLink="home" routerLinkActive="active">Home</a> |
+    <a routerLink="about">About</a>|
+    <a routerLink="dashboard">Dashboard</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
