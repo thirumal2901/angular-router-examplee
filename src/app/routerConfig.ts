@@ -6,6 +6,9 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const appRoutes: Routes = [
+  { path: '',
+    component: HomeComponent
+  },
   { path: 'home',
     component: HomeComponent
   },
