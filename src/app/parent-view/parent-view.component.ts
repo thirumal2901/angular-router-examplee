@@ -1,32 +1,20 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Stephen } from './stephen.model';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-parent',
-    template: `
-
-        Hello, Mr. (or Ms.): {{ selectedName }}
-
-`,
-styleUrls: ['./parent-view.component.css'],
-    encapsulation: ViewEncapsulation.None
+  selector: 'parent',
+  template: `
+    <div *ngIf="currentCounter">
+      <h1>Congratulations!</h1>
+      <h3>You set the parent's counter to: {{currentCounter}}</h3>
+    </div>
+    <child (buttonClick)="handleChildButtonClick($event)">
+  `
+  
 })
-
-export class ParentViewComponent implements OnInit {
-    stephen: Stephen;
-    selectedName: string;
-
-    constructor() {
-        this.stephen = new Stephen();
-        this.selectedName = this.stephen.firstName;
-    }
-
-    ngOnInit() {
-    }
-
-    updateName(selectedName: string): void {
-    console.log('in parent');
-    this.selectedName = selectedName;
-    }
-
+export class ParentViewComponent {
+  currentCounter
+  
+  handleChildButtonClick(value) {
+    this.currentCounter = value
+  }
 }

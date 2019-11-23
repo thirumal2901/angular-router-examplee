@@ -1,31 +1,21 @@
-import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
-import { Stephen } from './stephen.model';
+import { Component, Output, EventEmitter } from '@angular/core'
 
 @Component({
-    selector: 'app-child',
-    template: `
-
-        {{ stephen.firstName }}
-        {{ stephen.lastName }}
-        {{ stephen.fullName }}
-        `,
-    styleUrls: ['./child-view.component.css'],
-    encapsulation: ViewEncapsulation.None
+  selector: 'child',
+  template: `
+    <h3>Child Counter: {{counter}}</h3>
+    <button class="btn btn-primary" (click)="buttonClicked()">Click Me!</button>
+  `
 })
-
-export class ChildViewComponent implements OnInit {
-    @Input() stephen: Stephen;
-    @Output() onNameSelected: EventEmitter;
-
-    // @Output() onNameSelected: EventEmitter<any> = new EventEmitter();
-    constructor() {
-        this.onNameSelected = new EventEmitter();
-    }
-
-    ngOnInit() {
-    }
-
-    clicked(name: string): void {
-        this.onNameSelected.emit(name);
-    }
+export class ChildViewComponent { 
+  @Output() buttonClick = new EventEmitter()
+  counter = 0
+  
+  ngOnInit() {
+    setInterval(() => {this.counter++}, 1000)
+  }
+  
+  buttonClicked() {
+    this.buttonClick.emit(this.counter)
+  }
 }
