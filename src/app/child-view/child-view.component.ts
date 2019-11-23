@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
-import { Stephen } from '../stephen.model';
+import { Stephen } from './stephen.model';
 
 @Component({
     selector: 'app-child',
@@ -9,7 +9,7 @@ import { Stephen } from '../stephen.model';
         {{ stephen.lastName }}
         {{ stephen.fullName }}
         `,
-    //styleUrls: ['./child.component.css'],
+    styleUrls: ['./child-view.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
@@ -17,6 +17,7 @@ export class ChildViewComponent implements OnInit {
     @Input() stephen: Stephen;
     @Output() onNameSelected: EventEmitter;
 
+    // @Output() onNameSelected: EventEmitter<any> = new EventEmitter();
     constructor() {
         this.onNameSelected = new EventEmitter();
     }

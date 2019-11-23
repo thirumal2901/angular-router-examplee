@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Stephen } from '../stephen.model';
+import { Stephen } from './stephen.model';
 
 @Component({
     selector: 'app-parent',
@@ -8,7 +8,7 @@ import { Stephen } from '../stephen.model';
         Hello, Mr. (or Ms.): {{ selectedName }}
 
 `,
-//styleUrls: ['./parent.component.css'],
+styleUrls: ['./parent-view.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 

@@ -12,6 +12,7 @@ import { appRoutes } from './routerConfig';
 import { ParentViewComponent } from './parent-view/parent-view.component';
 import { ChildViewComponent } from './child-view/child-view.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
