@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'parent',
+  selector: 'parentChild',
   template: `
+
+    <br>
     <div *ngIf="currentCounter">
       <h1>Congratulations!</h1>
       <h3>You set the parent's counter to: {{currentCounter}}</h3>
     </div>
-    <child (buttonClick)="handleChildButtonClick($event)">
+    <child (buttonClick)="handleChildButtonClick($event)" [childMessage]="parentMessage">
+
+  
   `
   
 })
@@ -17,4 +21,6 @@ export class ParentViewComponent {
   handleChildButtonClick(value) {
     this.currentCounter = value
   }
+
+  parentMessage = "msg send from parent to child"
 }
