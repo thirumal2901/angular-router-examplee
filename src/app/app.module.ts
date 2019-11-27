@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
 
@@ -11,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { appRoutes } from './routerConfig';
 import { ParentViewComponent } from './parent-view/parent-view.component';
 import { ChildViewComponent } from './child-view/child-view.component';
+import { HttpRequestComponent } from './http-request/http-request.component';
 
 
 @NgModule({
@@ -20,10 +23,11 @@ import { ChildViewComponent } from './child-view/child-view.component';
     AboutComponent,
     DashboardComponent,
     ParentViewComponent,
-    ChildViewComponent
+    ChildViewComponent,
+    HttpRequestComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
