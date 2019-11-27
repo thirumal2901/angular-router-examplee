@@ -14,6 +14,9 @@ import { appRoutes } from './routerConfig';
 import { ParentViewComponent } from './parent-view/parent-view.component';
 import { ChildViewComponent } from './child-view/child-view.component';
 import { HttpRequestComponent } from './http-request/http-request.component';
+import { MyServiceComponent } from './my-service/my-service.component';
+import { MyserviceService } from './my-service/myservice.service.ts';
+import { HttpTutorialPointComponent } from './http-tutorial-point/http-tutorial-point.component';
 
 
 @NgModule({
@@ -24,12 +27,14 @@ import { HttpRequestComponent } from './http-request/http-request.component';
     DashboardComponent,
     ParentViewComponent,
     ChildViewComponent,
-    HttpRequestComponent
+    HttpRequestComponent,
+    MyServiceComponent,
+    HttpTutorialPointComponent
   ],
   imports: [
     BrowserModule, HttpModule, RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [MyserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

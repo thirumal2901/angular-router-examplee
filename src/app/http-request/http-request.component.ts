@@ -5,8 +5,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http'
 @Component({
   selector: 'app-http-request',
   template: `
-    <h1>Making a Request</h1>
-   
+   <p> making get request example</p>
     <button class="btn btn-primary" (click)="makeRequest()">Send Request</button>
     
     <div *ngFor="let movie of movieList">
