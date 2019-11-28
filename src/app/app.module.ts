@@ -17,7 +17,8 @@ import { HttpRequestComponent } from './http-request/http-request.component';
 import { MyServiceComponent } from './my-service/my-service.component';
 import { MyserviceService } from './my-service/myservice.service.ts';
 import { HttpTutorialPointComponent } from './http-tutorial-point/http-tutorial-point.component';
-
+import { FormsComponent } from './forms/forms.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { HttpTutorialPointComponent } from './http-tutorial-point/http-tutorial-
     ChildViewComponent,
     HttpRequestComponent,
     MyServiceComponent,
-    HttpTutorialPointComponent
+    HttpTutorialPointComponent,
+    FormsComponent
   ],
   imports: [
-    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]
